@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <title>Securit'Air</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/Vues/CSS/faq.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <div class="header">
+    <a href="accueil.html" class="logo">
+      <img
+        src="/Vues/Ressources/logo.png"
+        alt="Logo"
+        width="300"
+        height="auto"
+      />
+    </a>
+    <div class="header-center">
+      <a href="accueil.html">Accueil</a>
+      <div class="dropdown">
+        <a class="dropbtn">A propos</a>
+        <div class="dropdown-content">
+          <a href="qsn.html">Qui sommes nous</a>
+          <a href="produit.html">Notre produit</a>
+        </div>
+      </div>
+      <a href="contact.html">Nous contacter</a>
+    </div>
+    <div class="header-right">
+      <a href="subscribe.html">S'inscrire</a>
+      <a class="btn" href="connect.html">Se connecter</a>
+    </div>
+  </div>
+
+  <body>
+    <h1><p>Foire aux questions (FAQ)</p></h1>
+
+    <div class="question">Qui sont les partenaires de Securit'Air ?</div>
+    <div class="answer">
+      Les partenariats de Securit'Air sont les centres de recyclage : les joyeux
+      recycleurs et Lemon tri en Ile de France.
+    </div>
+    <hr class="hr-line" />
+
+    <div class="question">
+      Quelles sont les mesures récoltées par le système ?
+    </div>
+    <div class="answer">
+      Le système peut récolter la fréquence cardiaque des employés ainsi que la
+      température(°C), taux de Co2(%), niveau sonore (dB) et le taux
+      d'humidité(ppm) de l'environnement.
+    </div>
+    <hr class="hr-line" />
+
+    <div class="question">
+      Comment installer le système Sécurit'Air dans son centre ?
+    </div>
+    <div class="answer"></div>
+    <hr class="hr-line" />
+
+    <div class="question">
+      Comment les confidentialités des données sont assurées ?
+    </div>
+    <div class="answer">
+      La Plateforme met en œuvre des mesures organisationnelles, techniques,
+      logicielles et physiques en matière de sécurité informatique pour protéger
+      les données personnelles contre les altérations, destructions et accès non
+      autorisés.
+    </div>
+    <hr class="hr-line" />
+
+    <div class="question">Comment puis-je consulter mes relevés ?</div>
+    <div class="answer">
+      Il est possible de consulter les relevés sur le site internet. Une fois
+      connecté les relevés apparaissent directement.
+    </div>
+    <hr class="hr-line" />
+
+    <div class="question">Problème de connexion, qui contacter ?</div>
+    <div class="answer">
+      vous avez la rubrique "nous contacter" pour rédiger votre problème en
+      remplissant vos cordonnées et nous vous contacterons le plus vite
+      possible.
+    </div>
+    <hr class="hr-line" />
+
+    <script>
+      // Ajouter un gestionnaire d'événement aux questions pour afficher/cacher les réponses
+      var questions = document.querySelectorAll(".question");
+      for (var i = 0; i < questions.length; i++) {
+        questions[i].addEventListener("click", function () {
+          var answer = this.nextElementSibling;
+          if (answer.style.display === "block") {
+            answer.style.display = "none";
+          } else {
+            answer.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+
+  <footer>
+    <div class="footer-left">
+      <a href="faq.html" class="faq">Vous pouvez aussi regarder notre FAQ</a>
+
+      <div class="contacter">
+        <a href="contact.html" class="button">Nous contacter</a>
+        <i href="https://www.facebook.com/securitair"
+          ><img src="/Vues/Ressources/i.png" class="insta"
+        /></i>
+        <i href="https://www.instagram.com/secur_itairparis/"
+          ><img src="/Vues/Ressources/f.png" class="facebook"
+        /></i>
+      </div>
+    </div>
+    <img src="/Vues/Ressources/logo.png" alt="Logo" class="footer-logo" />
+    <div class="cgu">
+      <a href="cgv.html" class="footer-cgu">Conditions générales de ventes</a>
+      <a href="ml.html" class="footer-cgu">Mentions Légales</a>
+      <a href="pc.html" class="footer-cgu">Politique de confidentialité</a>
+    </div>
+  </footer>
+</html>

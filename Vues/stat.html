@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title>Securit'Air</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/Vues/CSS/profiluse.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <div class="header">
+    <a href="accueil.html" class="logo"></a>
+    <div class="header-center">
+      <a href="accueil.html">Home</a>
+      <div class="dropdown">
+        <a class="dropbtn">About</a>
+        <div class="dropdown-content">
+          <a href="qsn.html">Qui sommes nous</a>
+          <a href="produit.html">Notre produit</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="header-right">
+      <a href="subscribe.html">Sign up</a>
+      <a class="btn" href="connect.html">Sign in</a>
+    </div>
+  </div>
+
+  <body>
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+
+  <footer>
+    <div class="footer-left">
+      <a href="faq.html" class="faq">Vous pouvez aussi regarder notre FAQ</a>
+
+      <div class="contacter">
+        <a href="contact.html" class="button">Nous contacter</a>
+        <i href="https://www.facebook.com/securitair"
+          ><img src="/Vues/Ressources/i.png" class="insta"
+        /></i>
+        <i href="https://www.instagram.com/secur_itairparis/"
+          ><img src="/Vues/Ressources/f.png" class="facebook"
+        /></i>
+      </div>
+    </div>
+    <img src="/Vues/Ressources/logo.png" alt="Logo" class="footer-logo" />
+    <div class="cgu">
+      <a href="cgv.html" class="footer-cgu">Conditions générales de ventes</a>
+      <a href="ml.html" class="footer-cgu">Mentions Légales</a>
+      <a href="pc.html" class="footer-cgu">Politique de confidentialité</a>
+    </div>
+  </footer>
+</html>
