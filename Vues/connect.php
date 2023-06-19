@@ -2,9 +2,10 @@
   <head>
     <title>Securit'Air</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="CSS/contact.css" />
+    <link rel="stylesheet" href="CSS/connect.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="JS/connect.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap"
       rel="stylesheet"
@@ -37,61 +38,52 @@
     </div>
   </div>
 
-  <body>
-    <section class="contact">
-        <div class="container">
+  <section class="connect">
+      <div class="container">
         <div class="left">
-            <h1><span class="orange">Contactez</span>-nous</h1>
-            <h2>Intéressé par notre système ?</h2>
-            <p>
-            Notre équipe est disponible pour répondre à toutes vos questions ou
-            préoccupations. N'hésitez pas à nous contacter en utilisant le
-            formulaire :
-            </p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <img src="Ressources/it-removebg-preview.png" />
-                    <p>+33 1 23 45 67 89</p>
-                </div>
-                <div class="contact-item">
-                    <img src="Ressources/ie-removebg-preview.png" />
-                    <p>contact@securitair.com</p>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="right">
-            <form action="/Securit'Air 2/Controller/mail.php" method="post">
-            <h3>Nom</h3>
-            <input
-                type="text"
-                name="nom"
-                placeholder="Entrez votre nom"
-                required
-            />
+            <h1><span class="orange">Connectez</span> vous</h1>
+    </div>
+    <div class="formulaire">
+      <form action="/Securit'Air 2/Model/connexion.php" method="POST"  onsubmit="return validateForm();"> 
+        <h3>Identifiant</h3>
+        <input
+          type="text"
+          name="identifiant"
+          placeholder="Entrez votre identifiant"
+          required value="<?php if(isset($_COOKIE['identifiant'])){echo $_COOKIE['identifiant'];}?>"><p class="error"><?php if(isset($_GET["identifiant"]) && $_GET["identifiant"] === "true"){echo "Veuillez remplir votre identifiant";}?></p>
+        
 
-            <h3>E-mail</h3>
-            <input
-                type="email"
-                name="adresse"
-                placeholder="Entrez votre adresse e-mail"
-                required
-            />
-
-            <h3>Votre message</h3>
-            <textarea
-                name="message"
-                placeholder="Entrez votre message"
-                required
-            ></textarea>
-            <div class="contactbutton">
-            <button type="submit">Envoyer</button></div>
-            </form>
+       
+        <h3>Mot de passe</h3>
+        <input
+          type="password"
+          name="mdp"
+          placeholder="Entrez votre mot de passe"
+          required
+        />
+          <div class="connectbutton"><button type="submit">Se connecter</button></div>
         </div>
+      </form>
+       <h2>Pas encore de compte ?</h2>
+      <div class="inscrire">
+        <button><a href="subscribe.php">S'inscrire</a></button>
         </div>
-    </body>
   </section>
-
+  <script>
+            function validateForm() {
+                var email = document.getElementById('email').value;
+                var atpos = email.indexOf('@');
+                var dotpos = email.lastIndexOf('.');
+        
+                if (atpos < 1 || (dotpos - atpos < 2)) {
+                    alert('Veuillez entrer une adresse e-mail valide');
+                    document.getElementById('email').focus();
+                    return false;
+                }
+                confirm("Voulez-ous vous connecter ?"); //lors de la soumission du formulaire la fonction formSubmit est appellée;
+                // Le formulaire est valide
+            }
+        </script>
   <footer>
     <div class="footer-left">
       <a href="faq.php" class="faq">Vous pouvez aussi regarder notre FAQ</a>

@@ -2,7 +2,7 @@
   <head>
     <title>Securit'Air</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/Vues/CSS/profil.css" />
+    <link rel="stylesheet" href="CSS/profil_modifiable.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,7 +14,7 @@
   <div class="header">
     <a href="accueilconnecter.html" class="logo">
       <img
-        src="/Vues/Ressources/logojr2.png"
+        src="Ressources/logojr2.png"
         alt="Logo"
         width="110"
         height="auto"
@@ -22,15 +22,15 @@
     </a>
     <div class="header-center">
       <a href="accueilconnecter.html">Accueil</a>
-      <a href="profil.html">Profil</a>
+      <a href="profil.php">Profil</a>
       <a href="mesure.html">Mesures</a>
       <a href="messagerie.html">Messagerie</a>
     </div>
     <a href="accueil.html">Se déconnecter</a>
     <div class="header-right">
-      <a href="profil.html" class="logo">
+      <a href="profil.php" class="logo">
         <img
-          src="/Vues/Ressources/profiljr.png"
+          src="Ressources/profiljr.png"
           alt="Logo"
           width="50"
           height="auto"
@@ -48,15 +48,26 @@
                 <br />
             </p>
             <body>
-                <img src="/Vues/Ressources/impro.png" alt="Image de profil" />
-                <form>
-                <input type="text" name="nom" placeholder="Nom" />
+            <?php
+            session_start();
+            $num = $_SESSION['identifiant'];
+        try{
+            //On se connecte à la BDD
+            $dbco = new PDO('mysql:host=localhost:8889;dbname=Securitair;charset=utf8', 'root', 'root');
+        }
+        catch(PDOException $e){
+            echo 'Impossible de traiter les données. Erreur : '.$e->getMessage();
+        }
+        //SELECT type FROM `utilisateur` WHERE N°identification="22";
+        $requete=$dbco->prepare("
+        SELECT * FROM `profil` WHERE N°identification=$num");
+        $requete->execute();
+        $type = $requete->fetch();?>
+        
+                <img src="Ressources/impro.png" alt="Image de profil" />
+                <form action="/Securit'Air 2/Model/modification.php" method="post" >
+                <input type="text" name="nom" placeholder="nom" >
                 <input type="text" name="prenom" placeholder="Prénom" />
-                <input
-                    type="text"
-                    name="identification"
-                    placeholder="Numéro d'identification"
-                />
                 <input type="text" name="email" placeholder="Email" />
                 <input type="text" name="téléphone" placeholder="Téléphone" />
                 <input type="text" name="adresse" placeholder="Adresse" />
@@ -65,25 +76,13 @@
                 </form>
         </div>
         <div class="part2">
-            <h4> Envie de consulter vos données ?</h4>
-        <a href="mesure.html"
-          ><button type="submit">Accéder à mes mesures</button></a>
-        <h4> Rechercher un profil</h4>
-          <div class="search-bar">
-          <input type="text" placeholder="Recherche...">
-          <button type="submit">Rechercher</button>
-        </div>
-        
-        <h4> Créer un nouveau profil</h4><button type="submit">Créer</button></a>
-        
-        <h4> Supprimer un profil existant</h4><button type="submit">Supprimer</button></a>
-        
+       
         </div>
       </div>
   </body>
 
   <footer>
-    <img src="/Vues/Ressources/logo.png" alt="Logo" class="footer-logo" />
+    <img src="Ressources/logo.png" alt="Logo" class="footer-logo" />
     <div class="cgu">
       <a href="faq.html" class="footer-cgu">FAQ</a>
       <a href="cgv.html" class="footer-cgu">Conditions générales de ventes</a>

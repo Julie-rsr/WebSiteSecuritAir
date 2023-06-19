@@ -2,9 +2,10 @@
   <head>
     <title>Securit'Air</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/Vues/CSS/accueilconnecter.css" />
+    <link rel="stylesheet" href="CSS/accueilconnecter.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="traitement.js"></script>  
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap"
       rel="stylesheet"
@@ -14,7 +15,7 @@
   <div class="header">
     <a href="accueilconnecter.html" class="logo">
       <img
-        src="/Vues/Ressources/logojr2.png"
+        src="Ressources/logojr2.png"
         alt="Logo"
         width="110"
         height="auto"
@@ -22,15 +23,15 @@
     </a>
     <div class="header-center">
       <a href="accueilconnecter.html">Accueil</a>
-      <a href="profil.html">Profil</a>
-      <a href="mesure.html">Mesures</a>
+      <a href="profil.php">Profil</a>
+      <a href="mesure.php">Mesures</a>
       <a href="messagerie.html">Messagerie</a>
     </div>
-    <a href="accueil.html">Se déconnecter</a>
+    <a href="accueil.html"><button id="deconnexion">Se déconnecter</a></button>
     <div class="header-right">
-      <a href="profil.html" class="logo">
+      <a href="profil.php" class="logo">
         <img
-          src="/Vues/Ressources/profiljr.png"
+          src="Ressources/profiljr.png"
           alt="Logo"
           width="50"
           height="auto"
@@ -42,7 +43,7 @@
   <main>
     <section class="top">
       <div class="image">
-        <img src="/Vues/Ressources/imgjr.png" class="imt" />
+        <img src="Ressources/imgjr.png" class="imt" />
       </div>
       <div class="text">
         <h2>Working<span class="rose"> Together</span></h2>
@@ -69,11 +70,11 @@
           sont disponibles en ligne à partir de votre profil depuis l'espace
           mesures.
         </p>
-        <a href="mesure.html"><button>Accéder à mes mesures</button></a>
+        <a href="mesure.php"><button>Accéder à mes mesures</button></a>
       </div>
       <div class="image">
         <img
-          src="/Vues/Ressources/travailleurs-usine-se-saluent-pour-travail-equipe-reussi.jpg"
+          src="Ressources/travailleurs-usine-se-saluent-pour-travail-equipe-reussi.jpg"
           class="imc"
         />
       </div>
@@ -89,20 +90,20 @@
           sont disponibles en ligne à partir de votre profil depuis l'espace
           mesures.
         </p>
-        <a href="profil.html"><button>Accéder à mon profil</button></a>
+        <a href="profil.php"><button>Accéder à mon profil</button></a>
       </div>
       <div class="image">
         <img
-          src="/Vues/Ressources/logojr.png"
+          src="Ressources/logojr.png"
           class="imc"
         />
     </section>
     
 
   <footer>
-    <img src="/Vues/Ressources/logo.png" alt="Logo" class="footer-logo" />
+    <img src="Ressources/logo.png" alt="Logo" class="footer-logo" />
     <div class="cgu">
-      <a href="faq.html" class="footer-cgu">FAQ</a>
+      <a href="faq.php" class="footer-cgu">FAQ</a>
       <a href="cgv.html" class="footer-cgu">Conditions générales de ventes</a>
       <a href="ml.html" class="footer-cgu">Mentions Légales</a>
       <a href="pc.html" class="footer-cgu">Politique de confidentialité</a>
